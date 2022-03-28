@@ -1,0 +1,9 @@
+
+    <div>
+        <h2><%=@user.name%></h2>
+        <ul>
+        <%@proficiencies.each do |skill| %>
+            <li><%= link_to skill.skill_name, skill_path(id: skill.skill_id) %></li>
+        <%end%>
+        </ul>
+    </div>
