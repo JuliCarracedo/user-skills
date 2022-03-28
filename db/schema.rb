@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_03_28_220925) do
 
   create_table "proficiencies", force: :cascade do |t|
     t.integer "level"
+    t.string "skill_name"
     t.bigint "user_id", null: false
     t.bigint "skill_id", null: false
     t.datetime "created_at", precision: 6, null: false
