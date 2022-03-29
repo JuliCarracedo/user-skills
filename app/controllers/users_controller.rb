@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def show
-        @user = User.find(1)
+        @user = User.find(params[:id]||1)
 
         @not_found =  true unless @user
         if @user

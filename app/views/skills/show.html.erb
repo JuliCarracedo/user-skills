@@ -6,9 +6,9 @@
         <%=link_to "Back", :back, class:"back"%>
         <h2>Users interested in <span class="item"> <%= @skill.name %> </span> </h2>
 
-        <div>
+        <div class="users">
         <%@users.each do |user|%>
-            <div><%=user.name%></div>
+            <%=link_to user.name, user_path(id: user.id), class: "user item"%>
         <%end%>
         </div>
     <% end %>
