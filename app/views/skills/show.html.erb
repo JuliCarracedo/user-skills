@@ -2,6 +2,8 @@
     <%if @not_found%>
         <h2>Skill not found</h2>
     <% else %>
+
+        <%=link_to "Back", :back, class:"back"%>
         <h2>Users interested in <span class="item"> <%= @skill.name %> </span> </h2>
 
         <div>
