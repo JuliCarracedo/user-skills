@@ -1,11 +1,13 @@
-<%if @not_found%>
-    <h2>Skill not found</h2>
-<% else %>
-    <h2>Users proficient at <%= @skill.name %> </h2>
+<div class="container">
+    <%if @not_found%>
+        <h2>Skill not found</h2>
+    <% else %>
+        <h2>Users interested in <span class="item"> <%= @skill.name %> </span> </h2>
 
-    <div>
-    <%@users.each do |user|%>
-        <div><%=user.name%></div>
-    <%end%>
-    </div>
-<% end %>
+        <div>
+        <%@users.each do |user|%>
+            <div><%=user.name%></div>
+        <%end%>
+        </div>
+    <% end %>
+</div>

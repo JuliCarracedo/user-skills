@@ -1,9 +1,47 @@
 
-    <div>
+    <div class="container">
         <h2><%=@user.name%></h2>
-        <ul>
-        <%@proficiencies.each do |skill| %>
-            <li><%= link_to skill.skill_name, skills_path(id: skill.skill_id) %></li>
-        <%end%>
-        </ul>
+        <div class="skills">
+            <%unless @master.length === 0%>
+                <h3>Master/Influencer</h3>
+                <ul class="category">
+                    <%@master.each do |skill|%>
+                        <li class="item"><%=link_to skill.skill_name, skill_path(skill.skill_id) %></li>
+                    <%end%>
+                </ul>
+            <%end%>
+            <%unless @proficient.length === 0%>
+                <h3>Proficient</h3>
+                <ul class="category">
+                    <%@proficient.each do |skill|%>
+                        <li class="item"><%=link_to skill.skill_name, skill_path(skill.skill_id) %></li>
+                    <%end%>
+                </ul>
+            <%end%>
+            <%unless @competent.length === 0%>
+                <h3>Competent</h3>
+                <ul class="category">
+                    <%@competent.each do |skill|%>
+                        <li class="item"><%=link_to skill.skill_name, skill_path(skill.skill_id) %></li>
+                    <%end%>
+                </ul>
+            <%end%>
+            <%unless @novice.length === 0%>
+                <h3>Novice</h3>
+                <ul class="category">
+                    <%@novice.each do |skill|%>
+                        <li class="item"><%=link_to skill.skill_name, skill_path(skill.skill_id) %></li>
+                    <%end%>
+                </ul>
+            <%end%>
+            <%unless @interested.length === 0%>
+                <h3>Not competent but interested</h3>
+                <ul class="category">
+                    <%@interested.each do |skill|%>
+                        <li class="item"><%=link_to skill.skill_name, skill_path(skill.skill_id) %></li>
+                    <%end%>
+                </ul>
+            <%end%>
+            
+        </div>
     </div>
